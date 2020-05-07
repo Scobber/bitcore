@@ -1,7 +1,7 @@
 FROM node:carbon
 RUN apt update && apt install node-gyp -y
-run npm install @types/mocha && \
-npm run bootstrap && npm run compile
+RUN npm install @types/mocha && \
+    npm run bootstrap && npm run compile
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
