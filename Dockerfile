@@ -1,4 +1,6 @@
 FROM node:carbon
+run npm install @types/mocha && \
+npm run bootstrap && npm run compile
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
