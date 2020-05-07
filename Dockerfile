@@ -1,6 +1,6 @@
 FROM node:carbon
 RUN apt update && apt install node-gyp -y
-RUN npm install @types/mocha && \
+RUN npm install @types/mocha && npm install ajv@^5.0.0 --save && \
     npm run bootstrap && npm run compile
 WORKDIR /usr/src/app
 COPY package*.json ./
